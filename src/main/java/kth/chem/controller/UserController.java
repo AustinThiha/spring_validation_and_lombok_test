@@ -2,6 +2,8 @@ package kth.chem.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +26,7 @@ public class UserController {
 	UserRepo userRepo;
 
 	@PostMapping(value = "/create")
-	public ResponseEntity<?> createUser(@RequestBody User user) {
+	public ResponseEntity<?> createUser(@Valid @RequestBody User user) {
 //		User user = userRepo.save(reqUser);
 		System.out.println(user.toString());
 //		JsonServerResponse<?> apiResponse = ResponseHandler.createSuccessResponse(user);
